@@ -68,7 +68,8 @@
 
 .modal {
     color: #000;
-}
+    background-color: rgba(0, 0, 0, 0.827);
+}   
 
 
 
@@ -362,6 +363,7 @@
 .main {
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 .news {
@@ -996,7 +998,7 @@ input[type="radio"] {
 .right-side .card .card-title {
     background: #EBF3FF;
     margin: 0;
-    padding: 10px 0 0 0 ;
+    padding: 10px 0 0 0;
 }
 
 .right-side .card {
@@ -1048,6 +1050,36 @@ input[type="radio"] {
     transition: 0.5s ease;
 }
 
+/* photo Gallery */
+.photo-card {
+    height: 55%;
+    width: 22%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.207);
+}
+
+.photo-card .card-img {
+    width: 100%;
+    height: 90%;
+    opacity: 80%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.photo-card .card-img:hover {
+    opacity: 100%;
+    transform: scale(1.03);
+}
+
+.modalPhoto .senseModal {
+    position: absolute;
+}
+
+.modalPhoto .modal-img {
+    width: auto;
+}
+
+/* photo Gallery */
 /* -----------main------------- */
 
 /* ------------------ FOOTER ---------------------- */
@@ -1502,7 +1534,7 @@ input[type="radio"] {
     .myImg:hover {
         opacity: 0.7;
     }
-    
+
     .im {
         width: 100%;
         height: 100%;
@@ -1749,9 +1781,14 @@ input[type="radio"] {
         color: rgb(212, 209, 209);
         text-transform: uppercase;
     }
-
-
-
+    .photo-card{
+        height: 55%;    
+        width: 47%;  
+    }
+    .modal .modal-img{
+        width: 95%;
+        height: auto !important;
+    }
 }
 
 @media (min-width:768px) and (max-width:991px) {
@@ -2032,6 +2069,7 @@ input[type="radio"] {
 
     .modal {
         color: #000;
+        background-color: rgba(0, 0, 0, 0.827);
     }
 
     .icons-content {
@@ -2369,6 +2407,14 @@ input[type="radio"] {
         font-size: 17px;
         color: rgb(212, 209, 209);
         text-transform: uppercase;
+    }
+    .photo-card{
+        height: 55%;    
+        width: 96%;  
+    }
+    .modal .modal-img{
+        width: 95%;
+        height: auto !important;
     }
 
 }
@@ -3293,7 +3339,14 @@ input[type="radio"] {
         color: rgb(196, 194, 194);
         text-transform: uppercase;
     }
-
+    .photo-card{
+        height: 55%;    
+        width: 96%;  
+    }
+    .modal .modal-img{
+        width: 95%;
+        height: auto !important;
+    }
     /* ---------------- main end ---------- */
 
 }
@@ -3566,7 +3619,14 @@ input[type="radio"] {
     .useItem .card-title {
         font-size: 18px;
     }
-
+    .photo-card{
+        height: 55%;    
+        width: 96%;  
+    }
+    .modal .modal-img{
+        width: 95%;
+        height: auto !important;
+    }
 }
 
 
