@@ -1,4 +1,5 @@
 import React from 'react';
+import 'jquery'
 import edu5 from '../../img/edu5.jpg';
 import edu2 from '../../img/edu2.jpg';
 import edu6 from '../../img/edu6.jpg';
