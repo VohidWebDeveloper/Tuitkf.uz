@@ -4,7 +4,7 @@ const HomeVideo = () => {
     return (
         <div className='videoGallery w-100 h-auto p-2 ms-3' >
              <div className="news ms-5">
-                    <p className="news-text">Foto galereya</p>
+                    <p className="news-text">Video galereya</p>
                 </div>
             <div className="videoWrapper container w-100 h-auto d-flex flex-xl-row flex-lg-row flex-column">
                 <div className="videoGroupArea h-auto d-flex justify-content-center flex-wrap">
