@@ -42,6 +42,7 @@ const person = [
 const Position = () => {
     return (
         <>
+        
             <section class="inform-content">
                 <div class="container">
                     <div class="inform-content">
