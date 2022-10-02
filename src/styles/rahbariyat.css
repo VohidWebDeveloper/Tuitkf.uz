@@ -1,6 +1,7 @@
 .inform-content {
     padding: 20px 0px;
     width: 100%;
+    /* border: 2px solid blue; */
 }
 
 .inform-path {
@@ -18,10 +19,12 @@
 }
 
 .information-container {
+    /* border: 1px solid red; */
     min-height: 90vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
 }
 
 .information {

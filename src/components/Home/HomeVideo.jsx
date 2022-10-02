@@ -1,95 +1,121 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import '../../styles/videoElement.css';
+import getVideoId from 'get-video-id';
+import vid1 from '../../img/conferensia1.jpg'
+import vid2 from '../../img/conferensia2.jpg'
+import vid3 from '../../img/conferensia3.jpg'
+import vid4 from '../../img/conferensia4.jpg'
+
+//   https://img.youtube.com/vi/yourid/sddefault.jpg
+
 
 const HomeVideo = () => {
-    return (
-        // <div className='videoGallery w-100 h-auto p-2 ms-3' >
-        //     <div className="news ms-5">
-        //         <p className="news-text">Video galereya</p>
-        //     </div>
-        //     <div className="videoWrapper container w-100 h-auto d-flex flex-xl-row flex-lg-row flex-column">
-        //         <div className="videoGroupArea h-auto d-flex justify-content-center flex-wrap">
-        //             <div className="card m-2 miniVideos p-2">
-        //                 <iframe width="100%" height="70%" src="https://www.youtube.com/embed/-ifqvOBsfgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        //                 <p>Lorem ipsum dolor sit amet. Eligendi aperiam eaque nesciunt porro?</p>
-        //             </div>
-        //             <div className="card m-2 miniVideos p-2">
-        //                 <iframe width="100%" height="70%" src="https://www.youtube.com/embed/-ifqvOBsfgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        //                 <p>Lorem ipsum dolor sit amet. Eligendi aperiam eaque nesciunt porro?</p>
-        //             </div>
-        //             <div className="card m-2 miniVideos p-2">
-        //                 <iframe width="100%" height="70%" src="https://www.youtube.com/embed/-ifqvOBsfgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        //                 <p>Lorem ipsum dolor sit amet. Eligendi aperiam eaque nesciunt porro?</p>
-        //             </div>
-        //             <div className="card m-2 miniVideos p-2">
-        //                 <iframe width="100%" height="70%" src="https://www.youtube.com/embed/-ifqvOBsfgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        //                 <p>Lorem ipsum dolor sit amet. Eligendi aperiam eaque nesciunt porro?</p>
-        //             </div>
-        //         </div>
-        //         <div className="mainVideoArea h-auto d-flex justify-content-center align-items-center">
-        //             <div className="card m-2 mainVideo p-2">
-        //                 <iframe width="100%" height="70%" src="https://www.youtube.com/embed/-ifqvOBsfgo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        //                 <p>Lorem ipsum dolor sit amet. Eligendi aperiam eaque nesciunt porro?</p>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
+    const [data, setData] = useState([])
+    const [showModal, setShowModal] = useState(false);
+    const [activeObject, setActiveObject] = useState(null);
 
-        <div class="card-content">
-            <div class="news">
-                <p class="news-text">Video galereya</p>
+    useEffect(() => {
+        axios.get('https://rest.tuitkf.uz/v1/default/home')
+            .then(res => setData(res.data.video))
+            .catch(err => console.log(err))
+    }, [])
+
+    console.log(data);
+    for (let i = 0; i < data.length; i++) {
+
+        console.log(data[i]._url);
+
+    }
+
+    var urls = [
+        'https://youtube.com/shorts/dQw4w9WgXcQ?feature=share',
+        '//www.youtube-nocookie.com/embed/up_lNV-yoK4?rel=0',
+        'http://www.youtube.com/user/Scobleizer#p/u/1/1p3vcRhsYGo',
+        'http://www.youtube.com/watch?v=cKZDdG9FTKY&feature=channel',
+        'http://www.youtube.com/watch?v=yZ-K7nCVnBI&playnext_from=TL&videos=osPknwzXEas&feature=sub',
+        'http://www.youtube.com/ytscreeningroom?v=NRHVzbJVx8I',
+        'http://www.youtube.com/user/SilkRoadTheatre#p/a/u/2/6dwqZw0j_jY',
+        'http://youtu.be/6dwqZw0j_jY',
+        'http://www.youtube.com/watch?v=6dwqZw0j_jY&feature=youtu.be',
+        'http://youtu.be/afa-5HQHiAs',
+        'http://www.youtube.com/user/Scobleizer#p/u/1/1p3vcRhsYGo?rel=0',
+        'http://www.youtube.com/watch?v=cKZDdG9FTKY&feature=channel',
+        'http://www.youtube.com/watch?v=yZ-K7nCVnBI&playnext_from=TL&videos=osPknwzXEas&feature=sub',
+        'http://www.youtube.com/ytscreeningroom?v=NRHVzbJVx8I',
+        'http://www.youtube.com/embed/nas1rJpm7wY?rel=0',
+        'http://www.youtube.com/watch?v=peFZbP64dsU',
+        'http://youtube.com/v/dQw4w9WgXcQ?feature=youtube_gdata_player',
+        'http://youtube.com/vi/dQw4w9WgXcQ?feature=youtube_gdata_player',
+        'http://youtube.com/?v=dQw4w9WgXcQ&feature=youtube_gdata_player',
+        'http://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=youtube_gdata_player',
+        'http://youtube.com/?vi=dQw4w9WgXcQ&feature=youtube_gdata_player',
+        'http://youtube.com/watch?v=dQw4w9WgXcQ&feature=youtube_gdata_player',
+        'http://youtube.com/watch?vi=dQw4w9WgXcQ&feature=youtube_gdata_player',
+        'http://youtu.be/dQw4w9WgXcQ?feature=youtube_gdata_player'
+    ];
+    
+    var i, r, rx = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+    
+    for (i = 0; i < data.length; ++i) {
+        r = urls[i].match(rx);
+        console.log(r[1]);
+    }
+    // console.log(r[1]);
+
+
+    // const url = d
+
+    // const youTubeIdFromLink = (url) => url.match(/(?:https?:\/\/)?(?:www\.|m\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\/?\?v=|\/embed\/|\/)([^\s&\?\/\#]+)/)[1];
+
+
+
+    function getClass(index) {
+        return index === activeObject?.id ? "active" : "inactive";
+    }
+
+    // here className can not be "inactive" since Modal always shows activeObject
+    const Modal = ({ object: { label, description } }) => (
+        <div id="productModal" className="active">
+            This is modal
+            <h2>{label}</h2>
+            <span className="description">{description}</span>
+            <button onClick={() => setShowModal(false)}>Close me</button>
+        </div>
+    );
+
+
+
+    return (
+        <div className="card-content container">
+            <div className="news">
+                <p className="news-text">Video galereya</p>
             </div>
-            <div class="containers">
-                <div class="left-side">
-                    <div class="left-card card">
-                        <div class="img-top w-10">
-                            {/* <!-- <img src="../img/foto1.jpg" width="100%" alt="" /> --> */}
-                            {/* <video src="https://youtu.be/DFp1n-xt_Ro" width="100%" height="auto" controls>
-                                <source src="https://youtu.be/DFp1n-xt_Ro"/>
-                            </video> */}
-                            <iframe width="100%" height="85%" src="https://www.youtube.com/embed/DFp1n-xt_Ro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="card-title">
-                                Lorem, ipsum dolor sit amet consectetur. Atque, tenetur?
+            <div className="containers">
+                {data.map((item) => (
+                    <a href={item._url} key={item.id} className="video-item">
+                        <div className="video-center">
+
+                        </div>
+                        <div className="video-bottom">
+                            <div className="video-name">
+                                {item.name}
+                            </div>
+                            <div className="video-data">
+                                <div className="video-time">12.10.2022</div>
+                                <div className="video-logos">
+                                    <i className="bi bi-telegram"></i>
+                                    <i className="bi bi-facebook"></i>
+                                    <i className="bi bi-instagram"></i>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="left-card card">
-                    <iframe width="100%" height="85%" src="https://www.youtube.com/embed/DFp1n-xt_Ro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <img src={vid4} alt="" />
+                        <div className="shodow"></div>
+                    </a>
+                ))}
 
-                        <div class="card-title">
-                            Lorem ipsum dolor sit amet. Eligendi aperiam eaque nesciunt
-                            porro?
-                        </div>
-                    </div>
-                    <div class="left-card card">
-                    <iframe width="100%" height="85%" src="https://www.youtube.com/embed/DFp1n-xt_Ro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                        <div class="card-title">
-                            Lorem ipsum dolor sit amet. Eligendi aperiam eaque nesciunt
-                            porro?
-                        </div>
-                    </div>
-                    <div class="left-card card">
-                    <iframe width="100%" height="85%" src="https://www.youtube.com/embed/DFp1n-xt_Ro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                        <div class="card-title">
-                            Lorem ipsum dolor sit amet. Eligendi aperiam eaque nesciunt
-                            porro?
-                        </div>
-                    </div>
-                </div>
-                <div class="right-side">
-                    <div class="card w-100">
-                        {/* <video src='https://youtu.be/DFp1n-xt_Ro' width="100%" height="426px" controls>
-                            <source src="https://youtu.be/JHDsVEk6R60" type="video/mp4"/>
-                        </video> */}
-                        {/* <iframe width="100%" height="426px" src="https://www.youtube.com/embed/DFp1n-xt_Ro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-                        <iframe width="100%" height="426px" src="https://www.youtube.com/embed/NPkhbYWTvu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <div class="card-title">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Possimus veniam laborum saepe Lorem ipsum dolor sit..
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     );

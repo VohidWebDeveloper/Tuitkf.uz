@@ -1,45 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 import 'jquery'
 import edu5 from '../../img/edu5.jpg';
 import edu2 from '../../img/edu2.jpg';
 import edu6 from '../../img/edu6.jpg';
 import edu4 from '../../img/edu4.jpg';
+import '../../styles/homeNews.css';
+import { Link } from 'react-router-dom';
 
-
-$(".carousel").owlCarousel({
-    loop: true,
-    margin: 25,
-    // autoplay: true,
-    autoplayTimeout: 5000,
-    autoplayHoverPause: true,
-    nav: true,
-    navText: [
-      "<i class='fas fa-chevron-left'></i>",
-      "<i class='fas fa-chevron-right'></i>",
-    ],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      576: {
-        items: 1,
-      },
-      768: {
-        items:2,
-      },
-      600: {
-        items: 2,
-      },
-      992: {
-        items:4,
-      },
-      1000: {
-        items: 4,
-      },
-    },
-  });
 
 const HomeNews = () => {
+    const [data, setData] = useState([{}]);
+
+    useEffect(() => {
+        axios.get('https://rest.tuitkf.uz/v1/news')
+            .then(response => setData(response.data.items))
+            .catch(err => console.log(err))
+    }, [])
+
+    console.log(data);
     return (
         <>
             <div className="main-content">
@@ -47,132 +26,23 @@ const HomeNews = () => {
                     <p className="news-text">Yangiliklar</p>
                 </div>
 
-
-                <div className="wrapper">
-                    <div className="carousel owl-carousel">
-                        <div className="function" id="c1">
-                            <div className="card-title">
-                                <span className="name"><i className="bi bi-alarm"></i> 23:47, 19 Aprel 2022</span>
-                                <span><i className="fas fa-ellipsis-v"></i></span>
+                <div className="newCard-group">
+                    {data.map((item,index) => (
+                        <Link to={`/views/view/${item.id}`} key={index} className="newCard-item">
+                            <div className="new-top">
+                                <div className="shodof"></div>
+                                <img src={item.image} alt="foto" />
                             </div>
-                            <div className="card-logo">
-
-                                <img src={edu5} width="100%" height="100%" alt="" />
+                            <div className="new-bottom">
+                                <div className="new-name">{item.name}</div>
+                                <div className="newBottom-date">
+                                    <div className="neww">Yangiliklar</div>
+                                    <div className="newd">{item.created_at}</div>
+                                </div>
                             </div>
-                            <div className="coins">
-                                <h2>Yahshil makon loyihasi</h2>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus. Lorem ipsum
-                                    dolor sit amet.</h5>
-                                <button className="btn btn-outline-dark">Ko'proq</button>
-                            </div>
-                        </div>
-                        <div className="function" id="c2">
-                            <div className="card-title">
-                                <span className="name"><i className="bi bi-alarm"></i> 23:47, 19 Aprel 2022</span>
-                                <span><i className="fas fa-ellipsis-v"></i></span>
-                            </div>
-                            <div className="card-logo">
-                                <img src={edu2} width="100%" height="100%" alt="" />
-                            </div>
-                            <div className="coins">
-                                <h2>Yahshil makon loyihasi</h2>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus. Lorem ipsum
-                                    dolor sit amet.</h5>
-                                <button className="btn btn-outline-dark">Ko'proq</button>
-                            </div>
-                        </div>
-                        <div className="function" id="c2">
-                            <div className="card-title">
-                                <span className="name"><i className="bi bi-alarm"></i> 23:47, 19 Aprel 2022</span>
-                                <span><i className="fas fa-ellipsis-v"></i></span>
-                            </div>
-                            <div className="card-logo">
-                                <img src={edu6} width="100%" height="100%" alt="" />
-                            </div>
-                            <div className="coins">
-                                <h2>Yahshil makon loyihasi</h2>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus. Lorem ipsum
-                                    dolor sit amet.</h5>
-                                <button className="btn btn-outline-dark">Ko'proq</button>
-                            </div>
-                        </div>
-                        <div className="function" id="c2">
-                            <div className="card-title">
-                                <span className="name"><i className="bi bi-alarm"></i> 23:47, 19 Aprel 2022</span>
-                                <span><i className="fas fa-ellipsis-v"></i></span>
-                            </div>
-                            <div className="card-logo">
-                                <img src={edu4} width="100%" height="100%" alt="" />
-                            </div>
-                            <div className="coins">
-                                <h2>Yahshil makon loyihasi</h2>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus. Lorem ipsum
-                                    dolor sit amet.</h5>
-                                <button className="btn btn-outline-dark">Ko'proq</button>
-                            </div>
-                        </div>
-                        <div className="function" id="c3">
-                            <div className="card-title">
-                                <span className="name"><i className="bi bi-alarm"></i> 23:47, 19 Aprel 2022</span>
-                                <span><i className="fas fa-ellipsis-v"></i></span>
-                            </div>
-                            <div className="card-logo">
-                                <img src={edu5} width="100%" height="100%" alt="" />
-                            </div>
-                            <div className="coins">
-                                <h2>Yahshil makon loyihasi</h2>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus. Lorem ipsum
-                                    dolor sit amet.</h5>
-                                <button className="btn btn-outline-dark">Ko'proq</button>
-                            </div>
-                        </div>
-                        <div className="function" id="c4">
-                            <div className="card-title">
-                                <span className="name"><i className="bi bi-alarm"></i> 23:47, 19 Aprel 2022</span>
-                                <span><i className="fas fa-ellipsis-v"></i></span>
-                            </div>
-                            <div className="card-logo">
-                                <img src={edu6} width="100%" height="100%" alt="" />
-                            </div>
-                            <div className="coins">
-                                <h2>Yahshil makon loyihasi</h2>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus. Lorem ipsum
-                                    dolor sit amet.</h5>
-                                <button className="btn btn-outline-dark">Ko'proq</button>
-                            </div>
-                        </div>
-                        <div className="function" id="c5">
-                            <div className="card-title">
-                                <span className="name"><i className="bi bi-alarm"></i> 23:47, 19 Aprel 2022</span>
-                                <span><i className="fas fa-ellipsis-v"></i></span>
-                            </div>
-                            <div className="card-logo">
-                                <img src={edu4} width="100%" height="100%" alt="" />
-                            </div>
-                            <div className="coins">
-                                <h2>Yahshil makon loyihasi</h2>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus. Lorem ipsum
-                                    dolor sit amet.</h5>
-                                <button className="btn btn-outline-dark">Ko'proq</button>
-                            </div>
-                        </div>
-
-                        <div className="function" id="c5">
-                            <div className="card-title">
-                                <span className="name"><i className="bi bi-alarm"></i> 23:47, 19 Aprel 2022</span>
-                                <span><i className="fas fa-ellipsis-v"></i></span>
-                            </div>
-                            <div className="card-logo">
-                                <img src={edu6} width="100%" height="100%" alt="" />
-                            </div>
-                            <div className="coins">
-                                <h2>Yahshil makon loyihasi</h2>
-                                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, temporibus. Lorem ipsum
-                                    dolor sit amet.</h5>
-                                <button className="btn btn-outline-dark">Ko'proq</button>
-                            </div>
-                        </div>
-                    </div>
+                        </Link>
+                    ))}
+                    
                 </div>
 
             </div>
