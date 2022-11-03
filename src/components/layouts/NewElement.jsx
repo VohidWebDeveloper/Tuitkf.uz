@@ -3,7 +3,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import parse from 'html-react-parser'
-import { NewsView } from '../../widget/i18';
 
 
 const NewElement = () => {

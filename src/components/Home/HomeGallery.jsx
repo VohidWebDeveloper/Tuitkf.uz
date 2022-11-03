@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 
 
 
 const HomeGallery = () => {
+    const {t} = useTranslation("common")
     const [data, setData] = useState([])
     const [modal, setModal] = useState(false)
     const getImg = (src) => {
@@ -19,7 +21,7 @@ const HomeGallery = () => {
             .catch(err => console.log(err))
     }, [])
 
-    console.log(data);
+    // console.log(data);
     const imgs = [
         "https://cdn.pixabay.com/photo/2022/08/19/01/06/ferris-wheel-7395944_960_720.jpg",
         "https://cdn.pixabay.com/photo/2015/07/09/22/45/tree-838667_960_720.jpg",
@@ -30,7 +32,7 @@ const HomeGallery = () => {
         <>
             <div className="slide-content">
                 <div className="news">
-                    <p className="news-text">Foto galereya</p>
+                    <p className="news-text">{t("gallery.title")}</p>
                 </div>
                 {/* modal start */}
                 {/* <div className={modal ? "modal w-100 100vh d-block text-end modalWindow" : "modal w-100 h-100vh  bg-secondary modalWindow"}>

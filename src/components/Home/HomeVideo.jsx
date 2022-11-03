@@ -6,11 +6,14 @@ import vid1 from '../../img/conferensia1.jpg'
 import vid2 from '../../img/conferensia2.jpg'
 import vid3 from '../../img/conferensia3.jpg'
 import vid4 from '../../img/conferensia4.jpg'
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 //   https://img.youtube.com/vi/yourid/sddefault.jpg
 
 
 const HomeVideo = () => {
+    const {t} = useTranslation("common")
     const [data, setData] = useState([])
     const [showModal, setShowModal] = useState(false);
     const [activeObject, setActiveObject] = useState(null);
@@ -21,12 +24,11 @@ const HomeVideo = () => {
             .catch(err => console.log(err))
     }, [])
 
-    console.log(data);
-    for (let i = 0; i < data.length; i++) {
+    // for (let i = 0; i < data.length; i++) {
 
-        console.log(data[i]._url);
+    //     console.log(data[i]._url);
 
-    }
+    // }
 
     var urls = [
         'https://youtube.com/shorts/dQw4w9WgXcQ?feature=share',
@@ -55,12 +57,12 @@ const HomeVideo = () => {
         'http://youtu.be/dQw4w9WgXcQ?feature=youtube_gdata_player'
     ];
     
-    var i, r, rx = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+    // var i, r, rx = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
     
-    for (i = 0; i < data.length; ++i) {
-        r = urls[i].match(rx);
-        console.log(r[1]);
-    }
+    // for (i = 0; i < data.length; ++i) {
+    //     r = urls[i].match(rx);
+    //     console.log(r[1]);
+    // }
     // console.log(r[1]);
 
 
@@ -89,7 +91,7 @@ const HomeVideo = () => {
     return (
         <div className="card-content container">
             <div className="news">
-                <p className="news-text">Video galereya</p>
+                <p className="news-text">{t("video.title")}</p>
             </div>
             <div className="containers">
                 {data.map((item) => (

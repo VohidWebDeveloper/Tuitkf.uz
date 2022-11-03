@@ -7,10 +7,13 @@ import edu6 from '../../img/edu6.jpg';
 import edu4 from '../../img/edu4.jpg';
 import '../../styles/homeNews.css';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 
 const HomeNews = () => {
     const [data, setData] = useState([{}]);
+    
+    const {t} = useTranslation("common")
 
     useEffect(() => {
         axios.get('https://rest.tuitkf.uz/v1/news')
@@ -18,12 +21,12 @@ const HomeNews = () => {
             .catch(err => console.log(err))
     }, [])
 
-    console.log(data);
+    // console.log(data);
     return (
         <>
             <div className="main-content">
                 <div className="news">
-                    <p className="news-text">Yangiliklar</p>
+                    <p className="news-text">{t("news.title")}</p>
                 </div>
 
                 <div className="newCard-group">

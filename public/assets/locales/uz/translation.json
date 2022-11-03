@@ -1,0 +1,98 @@
+{
+    "navbar" : {
+        
+        "tell" : "Ishonch telefon",
+        "mail" : "Elektron pochta",
+
+        "navs" : {
+
+            "news" : {
+                "yangilik" : "YANGILIKLAR",
+                "rahbariyat" : "Rahbariyat",
+                "tadbir" : "Ommaviy tadbirlar"
+            },
+
+            "tuzilma" : {
+                "tuzilma" : "TUZILMA",
+                "tizim" : "Filial tizimi",
+                "tarix" : "Filial tarixi",
+                "bolim" : "Bo'limlar",
+                "markaz" : "Markazlar", 
+                "fakultet" : "Fakultetlar"
+            },
+
+            "xizmat" : {
+                "interaktiv" : "INTERAKTIV XIZMAT",
+                "ilmiy" : "Ilmiy faoliyat",
+                "moliya" : "Moliyaviy faoliyat",
+                "moliyaMore" : "Moliya"
+            },
+
+            "abituriyent" : {
+                "abituriyent": "ABITURIYENT",
+                "bakalavr" : "Bakalavriant",
+                "magistr" : "Magistratura",
+                "oliy" : "Ikkinchi oliy ta'lim",
+                "suhbats" : {
+                    "texnikum" : "Texnikum bitiruvchilari",
+                    "suhbat" : "Suhbat jarayoni grafigi",
+                    "mezon" : "Baholash mexoni",
+                    "natija" : "Suhbat natijalari"
+                     
+                }
+            },
+
+            "faoliyat" : {
+                "faol" : "Faoliyat",
+                "ilmiy" : "Ilmiy faoliyat",
+                "xalqaro" : "Xalqaro faoliyat",
+                "moliya" : "Moliyaviy faoliyat"
+            },
+
+            "aloqa" : "Aloqa" 
+        }
+    },
+    "home" : {
+        "homeName" : "TOSHKENT AXBOROT TEXNOLOGIYALARI UNIVERSITETI QARSHI FILIALI RASMIY VEB SAYTI",
+        "more" : "Ko'proq"
+    },
+    "mainSection" : {
+        "title" : "Asosiy yo'nalishlar",
+        "more" : "Ko'proq",
+        "less" : "Kamroq"
+    } ,
+
+    "news" : {
+        "title" : "Yangiliklar"
+    },
+
+    "gallery" : {
+        "title" : "Foto galereya"
+    },
+
+    "video" : {
+        "title" : "Video galereya"
+    },
+
+    "statics" : {
+        "professor" : "Professor o'qituvchilar",
+        "talabalar" : "Talabalar soni",
+        "fakultet" : "Fakultetlarsoni",
+        "kafedra" : "Kafedralar soni",
+        "bakalavr" : "Bakalavr yo'nalishlar",
+        "magistr" : "Magistr yo'nalishlari"
+    },
+    "useful" : {
+        "title" : "Foydali sahifalar"
+    },
+
+    "footer" : {
+        "about" : "Sayt haqida",
+        "rss" : "RSS",
+        "ourTeam" : "Bizning jamoa",
+        "text" : "TATU Qarshi filiali materiallaridan foydalanganda, ushbu resursga havola etilishi shart",
+        "footBottom" : "BARCHA HUQUQLAR HIMOYA QILINGAN. BARCHA XIZMATLAR LITSENZIYALANGAN"
+    }
+
+
+}

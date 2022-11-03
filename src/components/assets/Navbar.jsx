@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import '../../styles/home.css'
 
 const Navbar = () => {
+
+    const {t} = useTranslation("common")
     return (
         <>
             <div className="bottom-nav">
@@ -22,11 +25,11 @@ const Navbar = () => {
 
                             <ul className="links">
                                 <li className="link-li">
-                                    <a className="one-a" href="#">YANGILIKLAR</a>
+                                    <a className="one-a" href="#">{t('navbar.navs.news.yangilik')}</a>
                                     <i className='bx bxs-chevron-down htmlcss-arrow arrow'></i>
                                     <ul className="htmlCss-sub-menu sub-menu">
-                                        <li><Link to={'/views/rahbariyat'} href="#">Rahbariyat</Link></li>
-                                        <li><Link to={'/views/allNews'} href="#">Ommaviy tadbirlar</Link></li>
+                                        <li><Link to={'/views/rahbariyat'} href="#">{t('navbar.navs.news.rahbariyat')}</Link></li>
+                                        <li><Link to={'/views/allNews'} href="#">{t('navbar.navs.news.tadbir')}</Link></li>
                                         <li className="more">
                                             <span><a href="#">More</a>
                                                 <i className='bx bxs-chevron-right arrow more-arrow'></i>
@@ -40,14 +43,14 @@ const Navbar = () => {
                                     </ul>
                                 </li>
                                 <li className="link-li">
-                                    <a className="one-a" href="#">TUZILMA</a>
+                                    <a className="one-a" href="#">{t("navbar.navs.tuzilma.tuzilma")}</a>
                                     <i className='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
                                     <ul className="htmlCss-sub-menu sub-menu">
-                                        <li><a href="#">Filial tizimi</a></li>
-                                        <li><a href="#">Filial tarixi</a></li>
-                                        <li><a href="#">Bo'limlar</a></li>
-                                        <li><a href="#">Markazlar</a></li>
-                                        <li><a href="#">Fakultetlar</a></li>
+                                        <li><a href="#">{t("navbar.navs.tuzilma.tizim")}</a></li>
+                                        <li><a href="#">{t("navbar.navs.tuzilma.tarix")}</a></li>
+                                        <li><a href="#">{t("navbar.navs.tuzilma.tarix")}</a></li>
+                                        <li><a href="#">{t("navbar.navs.tuzilma.bolim")}</a></li>
+                                        <li><a href="#">{t("navbar.navs.tuzilma.fakultet")}</a></li>
                                         <li className="more">
                                             <span><a href="#">More</a>
                                                 <i className='bx bxs-chevron-right arrow more-arrow'></i>
@@ -61,14 +64,14 @@ const Navbar = () => {
                                     </ul>
                                 </li>
                                 <li className="link-li">
-                                    <a className="one-a" href="#">INTERAKTIV XIZMAT</a>
+                                    <a className="one-a" href="#">{t("navbar.navs.xizmat.interaktiv")}</a>
                                     <i className='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
                                     <ul className="htmlCss-sub-menu sub-menu">
-                                        <li><a href="#">Ilmiy faoliyat</a></li>
-                                        <li><a href="#">Xalqaro faoliyat</a></li>
+                                        <li><a href="#">{t("navbar.navs.xizmat.ilmiy")}</a></li>
+                                        <li><a href="#">{t("navbar.navs.xizmat.moliya")}</a></li>
                                         {/* <li><a href="#">Card Design</a></li> */}
                                         <li className="more">
-                                            <span><a href="#">Moliyaviy faoliyat</a>
+                                            <span><a href="#">{t("navbar.navs.xizmat.moliyaMore")}</a>
                                                 <i className='bx bxs-chevron-right arrow more-arrow'></i>
                                             </span>
                                             <ul className="more-sub-menu sub-menu">
@@ -80,36 +83,36 @@ const Navbar = () => {
                                     </ul>
                                 </li>
                                 <li className="link-li">
-                                    <a className="one-a" href="#">ABITURIYENT</a>
+                                    <a className="one-a" href="#">{t("navbar.navs.abituriyent.abituriyent")}</a>
                                     <i className='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
                                     <ul className="htmlCss-sub-menu sub-menu">
-                                        <li><a href="#">Bakalavriant</a></li>
-                                        <li><a href="#">Magistratura</a></li>
-                                        <li><a href="#">Ikkinchi oliy ta'lim</a></li>
+                                        <li><a href="#">{t("navbar.navs.abituriyent.bakalavr")}</a></li>
+                                        <li><a href="#">{t("navbar.navs.abituriyent.magistr")}</a></li>
+                                        <li><a href="#">{t("navbar.navs.abituriyent.oliy")}</a></li>
                                         <li className="more">
-                                            <span><a href="#">Texnikum bitiruvchilari</a>
+                                            <span><a href="#">{t("navbar.navs.abituriyent.suhbats.texnikum")}</a>
                                                 <i className='bx bxs-chevron-right arrow more-arrow'></i>
                                             </span>
                                             <ul className="more-sub-menu sub-menu">
-                                                <li><a href="#">Suhbat jarayoni grafigi</a></li>
-                                                <li><a href="#">Baholash mezoni</a></li>
-                                                <li><a href="#">Suhbat natijalari</a></li>
+                                                <li><a href="#">{t("navbar.navs.abituriyent.suhbats.suhbat")}</a></li>
+                                                <li><a href="#">{t("navbar.navs.abituriyent.suhbats.mezon")}</a></li>
+                                                <li><a href="#">{t("navbar.navs.abituriyent.suhbats.natija")}</a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="link-li">
-                                    <a className="one-a" href="#">FAOLIYAT</a>
+                                    <a className="one-a" href="#">{t("navbar.navs.faoliyat.faol")}</a>
                                     <i className='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
                                     <ul className="htmlCss-sub-menu sub-menu">
-                                        <li><a href="#">Ilmiy faoliyat</a></li>
-                                        <li><a href="#">Xalaqaro faoliyat</a></li>
-                                        <li><a href="#"> Moliyaviy faoliyat</a></li>
+                                        <li><a href="#">{t("navbar.navs.faoliyat.ilmiy")}</a></li>
+                                        <li><a href="#">{t("navbar.navs.faoliyat.xalqaro")}</a></li>
+                                        <li><a href="#"> {t("navbar.navs.faoliyat.moliya")}</a></li>
                                     </ul>
                                 </li>
 
                                 <li className="link-li">
-                                    <a className="one-a" href="#">ALOQA</a>
+                                    <a className="one-a" href="#">{t("navbar.navs.aloqa")}</a>
 
                                 </li>
 

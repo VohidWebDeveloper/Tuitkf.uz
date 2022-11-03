@@ -10,13 +10,14 @@ import more5 from '../../img/more5.png'
 import more6 from '../../img/more6.png'
 import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
+import { useTranslation } from 'react-i18next';
 
 defineLordIconElement(loadAnimation);
 
 const main = [
     {
         id: 1,
-        icon: "<lord-icon style= {{height: '200px', width: '200px'}} className='lord-icon' src='https://cdn.lordicon.com/gqdnbnwt.json' trigger='morph' colors='primary:#ebd10f,secondary:#8FBCFF' delay='0'></lord-icon>",
+        icon: "<lord-icon style= {{height: '100px', width: '100px'}} className='lord-icon' src='https://cdn.lordicon.com/gqdnbnwt.json' trigger='morph' colors='primary:#ebd10f,secondary:#8FBCFF' delay='0'></lord-icon>",
         title: "Hemis tizimi"
     },
     {
@@ -80,6 +81,8 @@ const main = [
 
 const HomeMain = () => {
 
+    const {t} = useTranslation("common");
+
     const [show, setShow] = useState(false);
     const lordIcon = document.querySelector('.lord-icon');
 
@@ -89,11 +92,11 @@ const HomeMain = () => {
         <>
             <div className="icons-content container">
                 <div className="news">
-                    <p className="news-text">Asosiy yo'nalishlar</p>
+                    <p className="news-text">{t("mainSection.title")}</p>
                 </div>
                 <div className={`icon-container ${show ? "" : 'closes'}`}>
                     {main.map(item => (
-                        <div className="icon-item card m-1">
+                        <div className="icon-item card m-1" key={item.id}>
                             <div className="img-top" >
                                 {parse(item.icon, {
                                     htmlparser2: {
@@ -101,7 +104,7 @@ const HomeMain = () => {
                                     }
                                 })}
                             </div>
-                            <div className="card-title p-2">{item.title}</div>
+                            <div className="card-title p-2 text-center">{item.title}</div>
                         </div>
                     ))}
                     {/* <div className="icon-item card m-1">
@@ -196,7 +199,7 @@ const HomeMain = () => {
                 </div>
                 <div className="koproq btn btn-outline-primary mx-auto px-4" onClick={() => {
                     setShow(!show)
-                }} >{show ? "Kamroq" : "Ko'proq"}</div>
+                }} >{show ? t("mainSection.less") : t("mainSection.more") }</div>
             </div>
         </>
     );

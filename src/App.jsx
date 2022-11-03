@@ -53,53 +53,8 @@ const person = [
     },
 ];
 
-
-const languages = [
-    {
-      code: 'uz',
-      name: 'Uzbek',
-      country_code: 'uz'
-    },
-    {
-      code: 'en',
-      name: 'Enlish',
-      country_code: 'en'
-    },
-    {
-      code: 'ru',
-      name: 'Rus',
-      country_code: 'ru'
-    }
-  ]
-
-
 const App = () => {
         const [data, setData] = useState([]);
-
-        // const { t } = useTranslation();
-        // const currentLanguageCode = Cookies.get('118next') || 'ru';
-        // const [lng, setLng] = useState(currentLanguageCode);
-        // const currentLanguage = languages.find(l => l.code ===currentLanguageCode);
-        // const releaseDate = new Date('2022-09-26')
-        // const timeDifference = new Date() - releaseDate;
-        // const number_of_days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        // const {id} = useParams;
-        // const number_type = [
-        //   {
-        //     id: 1,
-        //     name: "nums"
-        //   }
-        // ]
-      
-        // useEffect(() => {
-        //   document.title = `Tuitkf`+t('name')
-        //   axios.get('https://rest.tuitkf.uz/v1/news')
-        //     .then(response =>{setData(response.items);
-        //     console.log(response.data);} )
-        //     .catch(err => err)
-        // }, [currentLanguage,t])
-      
-      
     
     return (
         <>

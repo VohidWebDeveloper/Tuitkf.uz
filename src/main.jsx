@@ -2,14 +2,15 @@ import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import i18n from "i18next";
-import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
-import { useTranslation, initReactI18next } from "react-i18next";
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next'
-import axios from 'axios';
-
+import i18n from "i18next";
+import {  initReactI18next } from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
+import common_uz from '../public/assets/locales/uz/translation.json'
+import common_ru from '../public/assets/locales/ru/translation.json'
+import common_en from '../public/assets/locales/en/translation.json'
 
 
 i18n
@@ -17,17 +18,33 @@ i18n
     .use(LanguageDetector)
     .use(HttpApi)
     .init({
-        supportedLngs: ['uz', 'en', 'ru'],
+        interpolation: { escapeValue: false },
+        supportedLngs: ['uz', 'ru', 'en'],
+        lng: window.localStorage.getItem("language") || "uz",
         fallbackLng: "en",
+        resources: {
+            en: {
+              common: common_en, // 'common' is our custom namespace
+            },
+            ru: {
+              common: common_ru,
+            },
+            uz: {
+              common: common_uz,
+            },
+          },
         detection: {
-            order: ['path', 'cookie', 'htmlTag', 'localStorage', 'subdomain'],
+            order: ['cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
             caches: ['cookie']
         },
-        backend: {
-            loadPath: '/assets/locales/{{lng}}/translation.json',
-        }
-
+        // backend: {
+        //     loadPath: '/assets/locales/{{lng}}/translation.json'
+        // },
+        react: { useSuspense: false }
     });
+
+
+
 
 
 const loadingMarkup = (

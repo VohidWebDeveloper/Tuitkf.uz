@@ -8,6 +8,7 @@ import use3 from '../../img/use3.png'
 import use4 from '../../img/use4.png'
 import use11 from '../../img/use11.jpg'
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const usefulContent = [
     {
@@ -61,11 +62,12 @@ const usefulContent = [
 ]
 
 const HomeUseful = () => {
+    const {t} = useTranslation("common")
     return (
         <>
             <div className="useful-content">
                 <div className="news">
-                    <p className="news-text">Foydali sahifalar</p>
+                    <p className="news-text">{t("useful.title")}</p>
                 </div>
                 <div className="use-contents">
 

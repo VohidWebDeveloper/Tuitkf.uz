@@ -1,0 +1,91 @@
+{
+    "navbar" : {
+        "tell" : "Trust phone",
+        "mail" : "Email",
+
+        "navs" : {
+            "news" : {
+                "yangilik" : "NEWS",
+                "rahbariyat" : "Leadership",
+                "tadbir" : "Public events"
+            },
+            "tuzilma" : {
+                "tuzilma" : "STRUCTURE",
+                "tizim" : "Branch system",
+                "tarix" : "Branch history",
+                "bolim" : "Departments",
+                "markaz" : "Centers", 
+                "fakultet" : "Faculties"
+            },
+            "xizmat" : {
+                "interaktiv" : "INTERACTIVE SERVICE",
+                "ilmiy" : "Scientific activity",
+                "moliya" : "Financial activity",
+                "moliyaMore" : "Finance"
+            },
+            "abituriyent" : {
+                "abituriyent" : "APPLICANT",
+                "bakalavr" : "Undergraduate",
+                "magistr" : "Master's",
+                "oliy" : "Second higher education",
+                "suhbats" : {
+                    "texnikum" : "Technikum graduates",
+                    "suhbat" : "Interview process chart",
+                    "mezon" : "Evaluation criteria",
+                    "natija" : "Interview results"
+                     
+                }
+            },
+            "faoliyat" : {
+                "faol" : "Activity",
+                "ilmiy" : "Scientific activity",
+                "xalqaro" : "International activity",
+                "moliya" : "Financial activity"
+            },
+            "aloqa" : "Communication" 
+        }
+    },
+    "home" : {
+        "homeName" : "OFFICIAL WEBSITE OF TASHKENT UNIVERSITY OF INFORMATION TECHNOLOGIES OPPOSITE BRANCH",
+        "more" : "More"
+    },
+    "mainSection" : {
+        "title" : "Main directions",
+        "more" : "More",
+        "less" : "Less"
+    } ,
+
+    "news" : {
+        "title" : "News"
+    },
+
+    "gallery" : {
+        "title" : "Photo gallery"
+    },
+
+    "video" : {
+        "title" : "Video gallery"
+    },
+
+    "statics" : {
+        "professor" : "Professor teachers",
+        "talabalar" : "Number of students",
+        "fakultet" : "Number of faculties",
+        "kafedra" : "Number of departments",
+        "bakalavr" : "Bachelor directions",
+        "magistr" : "Master's directions"
+    },
+    "useful" : {
+        "title" : "Useful pages"
+    },
+
+    "footer" : {
+        "about" : "About the site",
+        "rss" : "RSS",
+        "ourTeam" : "Our team",
+        "text" : "When using the materials of TATU Karshi branch, it is necessary to refer to this resource",
+        "footBottom" : "ALL RIGHTS RESERVED. ALL SERVICES ARE LICENSED"
+    }
+
+
+}

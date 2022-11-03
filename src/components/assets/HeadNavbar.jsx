@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import gerb from '../../img/gerb.png';
 import music from '../../img/music.png';
 import flag from '../../img/flag.jpg';
 import Navbar from './Navbar';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+
+
+const option =[
+    {
+        id: 1,
+        value: "uz",
+        text: "O'zbek"
+    },
+    {
+        id: 2,
+        value: "ru",
+        text: "Русский"
+    },
+    {
+        id: 3,
+        value: "en",
+        text: "English"
+    },
+]
 
 const HeadNavbar = () => {
+    const { t } = useTranslation("common");
+    const [select , setSelect] = useState(option[0].value)
+    const language_change = (e)=> {
+        i18next.changeLanguage(e.target.value),
+        window.localStorage.setItem("language" , "uz")
+        // window.localStorage.setItem(setSelect(e.target.value))
+    }
     return (
         <>
             <div id='0' className="head-nav">
@@ -16,8 +44,8 @@ const HeadNavbar = () => {
                             <a href="https://www.youtube.com/channel/UCavGevCmtSrnfGVtAOTRsPQ"><i className="bi bi-youtube"></i></a>
                         </div>
                         <div className="call-me">
-                            <div className="tel phone"><i className="bi bi-telephone"></i> Ishonch telefon: 4112</div>
-                            <div className="tel devon"><i className="bi bi-envelope-fill"></i> Elektron pochta: info@tuitkf.uz</div>
+                            <div className="tel phone"><i className="bi bi-telephone"></i> {t("navbar.tell")}: 4112</div>
+                            <div className="tel devon"><i className="bi bi-envelope-fill"></i> {t("navbar.mail")}: info@tuitkf.uz</div>
                         </div>
                         <div className="symbols">
                             <div className="sign"><img src={gerb} width="100%" alt="" /></div>
@@ -25,10 +53,10 @@ const HeadNavbar = () => {
                             <div className="sign"><img src={flag} width="100%" alt="" /></div>
                         </div>
                         <div className="language">
-                            <select className="form-select" name="language" id="">
-                                <option className="form-control" value="1">Uz</option>
-                                <option className="form-control" value="2">Ru</option>
-                                <option className="form-control" value="3">Eng</option>
+                            <select onChange={(e) => language_change(e)} value = {select} className="form-select">
+                                {option.map(item => (
+                                    <option className="form-control" key={item.id} value={item.value}>{item.text}</option>
+                                ))}
                             </select>
                         </div>
                         <div className="temperature">
@@ -52,7 +80,7 @@ const HeadNavbar = () => {
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
-                                            YANGILIKLAR
+                                            {t('navbar.navs.news.yangilik')}
                                         </a>
                                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             <li><a className="dropdown-item" href="#">Action</a></li>

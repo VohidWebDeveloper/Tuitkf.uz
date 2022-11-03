@@ -1,24 +1,27 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import '../styles/home.css'
+import '../styles/home.css';
 import HeadNavbar from './assets/HeadNavbar';
 
 const Header = () => {
+    const {t} = useTranslation("common");
     return (
         <>
-            <div className="bg-image"></div>
+            <div className="bg-image">
+                
+            </div>
             <div className="header">
                 
                 <HeadNavbar/>
 
                 <div className="bg-text">
                     <p className="ins-name">
-                        TOSHKENT AXBOROT TEXNOLOGIYALARI UNIVERSITETI QARSHI FILIALI RASMIY
-                        VEB SAYTI
+                    {t("home.homeName")}
                     </p>
                     <div className="buttons d-flex justify-content-between">
                         <Link to={'/views/'} className="header-btn btn w-50 btn-outline-light px-2">
-                            Ko'proq
+                        {t("home.more")}
                         </Link>
                     </div>
                 </div>
